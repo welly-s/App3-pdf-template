@@ -12,6 +12,8 @@ for index, row in df.iterrows():
     pdf.cell(w=0, h=12, txt=row['Topic'], align='L', ln=1, border=0)   # w= cell width, ln= move to next line
     pdf.line(x1=10, y1=20, x2=200, y2=20)
 
+    for x in range(int(row['Pages'])-1):
+        pdf.add_page()
 
 
 pdf.output('output.pdf')
